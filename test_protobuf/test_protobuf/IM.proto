@@ -1,0 +1,179 @@
+syntax = "proto3";
+
+package im.citylife.proto;
+option java_package = "com.citylife.imsdk";
+option java_outer_classname = "IMSDK";
+message ProtoIMAppConnectParam {
+  string token = 1;       // Token
+  string deviceId = 2;    //设备id
+  string packageName = 3; //应用包名
+  ProtoIMBaseInfo info = 4;      //基本信息
+}
+
+message ProtoIMBaseInfo {
+  string platform = 1;       //消息类型
+  string sdkVersion = 2;     //消息目标方(可能是群ID)
+  ProtoIMDeviceInfo deviceInfo = 3; //接收者列表（可选）
+}
+
+message ProtoIMDeviceInfo {
+  string osNameVersion = 1; //消息类型
+  string network = 2;       //消息目标方(可能是群ID)
+  string networkSp = 3;     //消息内容（依赖消息类型解析）
+}
+
+message ProtoIMConfigInfo {
+  string rootDir = 1;       //消息类型
+  string databaseDir = 2;   //消息目标方(可能是群ID)
+  string logDir = 3;        //消息内容（依赖消息类型解析）
+  int32 backgroundMode = 4; //消息内容（依赖消息类型解析）
+  string naviDomain = 5;    //消息内容（依赖消息类型解析）
+  bool enableHttp2 = 6;     //消息内容（依赖消息类型解析）
+  int32 logLevel = 7;       //消息内容（依赖消息类型解析）
+}
+
+message ProtoIMAppRecvMessage {
+  int32 convType = 1;
+  string msgType = 2; //消息目标方(可能是群ID)
+  string fromId = 3;  //消息目标方(可能是群ID)
+  string convId = 4;  //消息目标方(可能是群ID)
+  string content = 5; //消息目标方(可能是群ID)
+  string msgId = 6;   //消息目标方(可能是群ID)
+  int64 timestamp = 7;
+}
+
+message ProtoIMAppRecvMessages {
+  repeated ProtoIMAppRecvMessage msgs = 1;
+}
+
+message ProtoIMAppSendMessage {
+  string uuid = 1;
+  string type = 2;          //消息目标方(可能是群ID)
+  string content = 3;       //消息目标方(可能是群ID)
+  ProtoIMAppPushInfo pushInfo = 4; //消息目标方(可能是群ID)
+  ProtoIMAppSendMessageAsyncInfo asyncInfo = 5;
+}
+
+message ProtoIMAppPushInfo {
+  string pushContent = 1;
+  string pushData = 2;     //消息目标方(可能是群ID)
+  string pushTitle = 3;    //消息目标方(可能是群ID)
+  string pushSubtitle = 4; //消息目标方(可能是群ID)
+  string pushSound = 5;
+}
+
+message ProtoIMAppSendMessageAsyncInfo {
+  string uuid = 1;
+  string localPath = 2; //消息目标方(可能是群ID)
+  string serverUrl = 3; //消息目标方(可能是群ID)
+  string fileType = 4;  //消息目标方(可能是群ID)
+  int64 timestamp = 5;
+}
+
+message ProtoIMAppDownloadFileInfo {
+  string msgId = 1;
+  string senderId = 2;  //消息目标方(可能是群ID)
+  string fileId = 3;    //消息目标方(可能是群ID)
+  string localPath = 4; //消息目标方(可能是群ID)
+  string url = 5;       //消息目标方(可能是群ID)
+  string fileType = 6;  //消息目标方(可能是群ID)
+  int64 timestamp = 7;
+}
+
+enum ProtoIMMessageStatus {
+  Init = 0;        //< 消息初始化状态 例如：草稿
+  Sending = 1;     //< 消息发送中
+  SendSuccess = 2; ///< 消息发送成功
+  SendFailed = 3;  ///< 消息发送失败
+  HasDeleted = 4;  ///< 消息已经删除
+  HasRevoked = 5;  ///< 消息已经撤消
+}
+
+message ProtoIMOfflinePushInfo {
+  string pushcontent = 1;
+  string pushdata = 2;
+  string pushtitle = 3;
+  string pushsubtitle = 4;
+  string pushsound = 5;
+}
+
+message ProtoIMSendMessageAsyncInfo {
+  string uuid = 1;
+  string local_path = 2;
+  string url = 3;
+  string file_type = 4;
+  int64 timestamp = 5;
+}
+
+message ProtoIMSendMessage {
+  ProtoIMMessage message = 1;
+  ProtoIMAppSendMessageAsyncInfo async_info = 2;
+  ProtoIMOfflinePushInfo msg_push_info = 3;
+}
+
+message ProtoIMMessage {
+  string msg_uuid = 1;
+  string msg_type = 2;
+  bool isSend = 3;
+  string sender = 4;
+  string receiver = 5;
+  string msg_content = 6;
+  int64 timestamp = 7;
+  ProtoIMMessageStatus msg_status = 8;
+}
+
+message ProtoIMConversation {
+  string conv_id = 1;
+  int32 conv_type = 2;
+  int64 timestamp = 3;
+  string snapshot = 4;
+  string last_msg_uuid = 5;
+  string last_readed_msg_uuid = 6;
+  int64 last_readed_msg_timestamp = 7;
+  int32 unread_count = 8;
+  ProtoIMSendMessage last_msg = 9;
+}
+
+message ProtoIMConversations {
+  repeated ProtoIMConversation convs = 1;
+}
+
+message ProtoIMMessageEx {
+  string msg_uuid = 1;
+  ProtoIMConversationBase conv = 2;
+  string sender = 4;
+  string receiver = 5;
+  int64 timestamp = 6;
+  ProtoIMMessageStatus msg_status = 7;
+  string extra = 8;
+  oneof test_oneof {
+     ProtoIMMessageText text = 16;
+     ProtoIMMessageImage image = 17;
+  }
+}
+
+message ProtoIMConversationBase {
+  string conv_id = 1;
+  int32 conv_type = 2;
+}
+
+message ProtoIMMessageText {
+  string content = 1;
+}
+
+message ProtoIMImage {
+  string image_uuid = 1;
+  int32 image_type = 2;
+  int32 image_size = 3;
+  int32 image_heigh = 4;
+  int32 image_width = 5;
+  string image_url = 6;
+}
+
+message ProtoIMMessageImage {
+  string image_uuid = 1;
+  string local_path = 2;
+  int32 compress_level = 3;
+  int32 format = 4;
+  repeated ProtoIMImage images = 5;
+}
