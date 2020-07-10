@@ -31,6 +31,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
@@ -48,7 +51,7 @@ struct TableStruct_IM_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[21]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[23]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -115,6 +118,12 @@ extern ProtoIMMessageTextDefaultTypeInternal _ProtoIMMessageText_default_instanc
 class ProtoIMOfflinePushInfo;
 class ProtoIMOfflinePushInfoDefaultTypeInternal;
 extern ProtoIMOfflinePushInfoDefaultTypeInternal _ProtoIMOfflinePushInfo_default_instance_;
+class ProtoIMReturnResult;
+class ProtoIMReturnResultDefaultTypeInternal;
+extern ProtoIMReturnResultDefaultTypeInternal _ProtoIMReturnResult_default_instance_;
+class ProtoIMReturnResult_ResultEntry_DoNotUse;
+class ProtoIMReturnResult_ResultEntry_DoNotUseDefaultTypeInternal;
+extern ProtoIMReturnResult_ResultEntry_DoNotUseDefaultTypeInternal _ProtoIMReturnResult_ResultEntry_DoNotUse_default_instance_;
 class ProtoIMSendMessage;
 class ProtoIMSendMessageDefaultTypeInternal;
 extern ProtoIMSendMessageDefaultTypeInternal _ProtoIMSendMessage_default_instance_;
@@ -144,6 +153,8 @@ template<> ::im::citylife::proto::ProtoIMMessageEx* Arena::CreateMaybeMessage<::
 template<> ::im::citylife::proto::ProtoIMMessageImage* Arena::CreateMaybeMessage<::im::citylife::proto::ProtoIMMessageImage>(Arena*);
 template<> ::im::citylife::proto::ProtoIMMessageText* Arena::CreateMaybeMessage<::im::citylife::proto::ProtoIMMessageText>(Arena*);
 template<> ::im::citylife::proto::ProtoIMOfflinePushInfo* Arena::CreateMaybeMessage<::im::citylife::proto::ProtoIMOfflinePushInfo>(Arena*);
+template<> ::im::citylife::proto::ProtoIMReturnResult* Arena::CreateMaybeMessage<::im::citylife::proto::ProtoIMReturnResult>(Arena*);
+template<> ::im::citylife::proto::ProtoIMReturnResult_ResultEntry_DoNotUse* Arena::CreateMaybeMessage<::im::citylife::proto::ProtoIMReturnResult_ResultEntry_DoNotUse>(Arena*);
 template<> ::im::citylife::proto::ProtoIMSendMessage* Arena::CreateMaybeMessage<::im::citylife::proto::ProtoIMSendMessage>(Arena*);
 template<> ::im::citylife::proto::ProtoIMSendMessageAsyncInfo* Arena::CreateMaybeMessage<::im::citylife::proto::ProtoIMSendMessageAsyncInfo>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -4297,6 +4308,193 @@ class ProtoIMMessageImage :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr local_path_;
   ::PROTOBUF_NAMESPACE_ID::int32 compress_level_;
   ::PROTOBUF_NAMESPACE_ID::int32 format_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_IM_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ProtoIMReturnResult_ResultEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<ProtoIMReturnResult_ResultEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<ProtoIMReturnResult_ResultEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  ProtoIMReturnResult_ResultEntry_DoNotUse();
+  ProtoIMReturnResult_ResultEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const ProtoIMReturnResult_ResultEntry_DoNotUse& other);
+  static const ProtoIMReturnResult_ResultEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const ProtoIMReturnResult_ResultEntry_DoNotUse*>(&_ProtoIMReturnResult_ResultEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "im.citylife.proto.ProtoIMReturnResult.ResultEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "im.citylife.proto.ProtoIMReturnResult.ResultEntry.value");
+ }
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_IM_2eproto);
+    return ::descriptor_table_IM_2eproto.file_level_metadata[21];
+  }
+
+  public:
+};
+
+// -------------------------------------------------------------------
+
+class ProtoIMReturnResult :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:im.citylife.proto.ProtoIMReturnResult) */ {
+ public:
+  ProtoIMReturnResult();
+  virtual ~ProtoIMReturnResult();
+
+  ProtoIMReturnResult(const ProtoIMReturnResult& from);
+  ProtoIMReturnResult(ProtoIMReturnResult&& from) noexcept
+    : ProtoIMReturnResult() {
+    *this = ::std::move(from);
+  }
+
+  inline ProtoIMReturnResult& operator=(const ProtoIMReturnResult& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ProtoIMReturnResult& operator=(ProtoIMReturnResult&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ProtoIMReturnResult& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ProtoIMReturnResult* internal_default_instance() {
+    return reinterpret_cast<const ProtoIMReturnResult*>(
+               &_ProtoIMReturnResult_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  friend void swap(ProtoIMReturnResult& a, ProtoIMReturnResult& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ProtoIMReturnResult* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ProtoIMReturnResult* New() const final {
+    return CreateMaybeMessage<ProtoIMReturnResult>(nullptr);
+  }
+
+  ProtoIMReturnResult* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ProtoIMReturnResult>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ProtoIMReturnResult& from);
+  void MergeFrom(const ProtoIMReturnResult& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ProtoIMReturnResult* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "im.citylife.proto.ProtoIMReturnResult";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_IM_2eproto);
+    return ::descriptor_table_IM_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kResultFieldNumber = 2,
+    kCodeFieldNumber = 1,
+  };
+  // map<string, string> result = 2;
+  int result_size() const;
+  private:
+  int _internal_result_size() const;
+  public:
+  void clear_result();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_result() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_result();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      result() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_result();
+
+  // int64 code = 1;
+  void clear_code();
+  ::PROTOBUF_NAMESPACE_ID::int64 code() const;
+  void set_code(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_code() const;
+  void _internal_set_code(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:im.citylife.proto.ProtoIMReturnResult)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      ProtoIMReturnResult_ResultEntry_DoNotUse,
+      std::string, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      0 > result_;
+  ::PROTOBUF_NAMESPACE_ID::int64 code_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_IM_2eproto;
 };
@@ -9417,9 +9615,68 @@ ProtoIMMessageImage::images() const {
   return images_;
 }
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// ProtoIMReturnResult
+
+// int64 code = 1;
+inline void ProtoIMReturnResult::clear_code() {
+  code_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 ProtoIMReturnResult::_internal_code() const {
+  return code_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 ProtoIMReturnResult::code() const {
+  // @@protoc_insertion_point(field_get:im.citylife.proto.ProtoIMReturnResult.code)
+  return _internal_code();
+}
+inline void ProtoIMReturnResult::_internal_set_code(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  code_ = value;
+}
+inline void ProtoIMReturnResult::set_code(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_code(value);
+  // @@protoc_insertion_point(field_set:im.citylife.proto.ProtoIMReturnResult.code)
+}
+
+// map<string, string> result = 2;
+inline int ProtoIMReturnResult::_internal_result_size() const {
+  return result_.size();
+}
+inline int ProtoIMReturnResult::result_size() const {
+  return _internal_result_size();
+}
+inline void ProtoIMReturnResult::clear_result() {
+  result_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+ProtoIMReturnResult::_internal_result() const {
+  return result_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+ProtoIMReturnResult::result() const {
+  // @@protoc_insertion_point(field_map:im.citylife.proto.ProtoIMReturnResult.result)
+  return _internal_result();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+ProtoIMReturnResult::_internal_mutable_result() {
+  return result_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+ProtoIMReturnResult::mutable_result() {
+  // @@protoc_insertion_point(field_mutable_map:im.citylife.proto.ProtoIMReturnResult.result)
+  return _internal_mutable_result();
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

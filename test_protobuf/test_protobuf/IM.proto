@@ -177,3 +177,8 @@ message ProtoIMMessageImage {
   int32 format = 4;
   repeated ProtoIMImage images = 5;
 }
+
+message ProtoIMReturnResult {
+    int64 code = 1;
+    map<string, string> result = 2;
+}

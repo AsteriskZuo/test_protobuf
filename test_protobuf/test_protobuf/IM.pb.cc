@@ -26,6 +26,7 @@ extern PROTOBUF_INTERNAL_EXPORT_IM_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SC
 extern PROTOBUF_INTERNAL_EXPORT_IM_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ProtoIMMessageImage_IM_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_IM_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ProtoIMMessageText_IM_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_IM_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ProtoIMOfflinePushInfo_IM_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_IM_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ProtoIMReturnResult_ResultEntry_DoNotUse_IM_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_IM_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_ProtoIMSendMessage_IM_2eproto;
 namespace im {
 namespace citylife {
@@ -116,6 +117,14 @@ class ProtoIMMessageImageDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ProtoIMMessageImage> _instance;
 } _ProtoIMMessageImage_default_instance_;
+class ProtoIMReturnResult_ResultEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ProtoIMReturnResult_ResultEntry_DoNotUse> _instance;
+} _ProtoIMReturnResult_ResultEntry_DoNotUse_default_instance_;
+class ProtoIMReturnResultDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ProtoIMReturnResult> _instance;
+} _ProtoIMReturnResult_default_instance_;
 }  // namespace proto
 }  // namespace citylife
 }  // namespace im
@@ -396,6 +405,34 @@ static void InitDefaultsscc_info_ProtoIMOfflinePushInfo_IM_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ProtoIMOfflinePushInfo_IM_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ProtoIMOfflinePushInfo_IM_2eproto}, {}};
 
+static void InitDefaultsscc_info_ProtoIMReturnResult_IM_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::im::citylife::proto::_ProtoIMReturnResult_default_instance_;
+    new (ptr) ::im::citylife::proto::ProtoIMReturnResult();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::im::citylife::proto::ProtoIMReturnResult::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_ProtoIMReturnResult_IM_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_ProtoIMReturnResult_IM_2eproto}, {
+      &scc_info_ProtoIMReturnResult_ResultEntry_DoNotUse_IM_2eproto.base,}};
+
+static void InitDefaultsscc_info_ProtoIMReturnResult_ResultEntry_DoNotUse_IM_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::im::citylife::proto::_ProtoIMReturnResult_ResultEntry_DoNotUse_default_instance_;
+    new (ptr) ::im::citylife::proto::ProtoIMReturnResult_ResultEntry_DoNotUse();
+  }
+  ::im::citylife::proto::ProtoIMReturnResult_ResultEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ProtoIMReturnResult_ResultEntry_DoNotUse_IM_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ProtoIMReturnResult_ResultEntry_DoNotUse_IM_2eproto}, {}};
+
 static void InitDefaultsscc_info_ProtoIMSendMessage_IM_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -427,7 +464,7 @@ static void InitDefaultsscc_info_ProtoIMSendMessageAsyncInfo_IM_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ProtoIMSendMessageAsyncInfo_IM_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ProtoIMSendMessageAsyncInfo_IM_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_IM_2eproto[21];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_IM_2eproto[23];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_IM_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_IM_2eproto = nullptr;
 
@@ -639,6 +676,22 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_IM_2eproto::offsets[] PROTOBUF
   PROTOBUF_FIELD_OFFSET(::im::citylife::proto::ProtoIMMessageImage, compress_level_),
   PROTOBUF_FIELD_OFFSET(::im::citylife::proto::ProtoIMMessageImage, format_),
   PROTOBUF_FIELD_OFFSET(::im::citylife::proto::ProtoIMMessageImage, images_),
+  PROTOBUF_FIELD_OFFSET(::im::citylife::proto::ProtoIMReturnResult_ResultEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::im::citylife::proto::ProtoIMReturnResult_ResultEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::im::citylife::proto::ProtoIMReturnResult_ResultEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::im::citylife::proto::ProtoIMReturnResult_ResultEntry_DoNotUse, value_),
+  0,
+  1,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::im::citylife::proto::ProtoIMReturnResult, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::im::citylife::proto::ProtoIMReturnResult, code_),
+  PROTOBUF_FIELD_OFFSET(::im::citylife::proto::ProtoIMReturnResult, result_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::im::citylife::proto::ProtoIMAppConnectParam)},
@@ -662,6 +715,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 180, -1, sizeof(::im::citylife::proto::ProtoIMMessageText)},
   { 186, -1, sizeof(::im::citylife::proto::ProtoIMImage)},
   { 197, -1, sizeof(::im::citylife::proto::ProtoIMMessageImage)},
+  { 207, 214, sizeof(::im::citylife::proto::ProtoIMReturnResult_ResultEntry_DoNotUse)},
+  { 216, -1, sizeof(::im::citylife::proto::ProtoIMReturnResult)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -686,6 +741,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::im::citylife::proto::_ProtoIMMessageText_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::im::citylife::proto::_ProtoIMImage_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::im::citylife::proto::_ProtoIMMessageImage_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::im::citylife::proto::_ProtoIMReturnResult_ResultEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::im::citylife::proto::_ProtoIMReturnResult_default_instance_),
 };
 
 const char descriptor_table_protodef_IM_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -765,15 +822,19 @@ const char descriptor_table_protodef_IM_2eproto[] PROTOBUF_SECTION_VARIABLE(prot
   "\006 \001(\t\"\226\001\n\023ProtoIMMessageImage\022\022\n\nimage_u"
   "uid\030\001 \001(\t\022\022\n\nlocal_path\030\002 \001(\t\022\026\n\016compres"
   "s_level\030\003 \001(\005\022\016\n\006format\030\004 \001(\005\022/\n\006images\030"
-  "\005 \003(\0132\037.im.citylife.proto.ProtoIMImage*n"
-  "\n\024ProtoIMMessageStatus\022\010\n\004Init\020\000\022\013\n\007Send"
-  "ing\020\001\022\017\n\013SendSuccess\020\002\022\016\n\nSendFailed\020\003\022\016"
-  "\n\nHasDeleted\020\004\022\016\n\nHasRevoked\020\005B\033\n\022com.ci"
-  "tylife.imsdkB\005IMSDKb\006proto3"
+  "\005 \003(\0132\037.im.citylife.proto.ProtoIMImage\"\226"
+  "\001\n\023ProtoIMReturnResult\022\014\n\004code\030\001 \001(\003\022B\n\006"
+  "result\030\002 \003(\01322.im.citylife.proto.ProtoIM"
+  "ReturnResult.ResultEntry\032-\n\013ResultEntry\022"
+  "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001*n\n\024Proto"
+  "IMMessageStatus\022\010\n\004Init\020\000\022\013\n\007Sending\020\001\022\017"
+  "\n\013SendSuccess\020\002\022\016\n\nSendFailed\020\003\022\016\n\nHasDe"
+  "leted\020\004\022\016\n\nHasRevoked\020\005B\033\n\022com.citylife."
+  "imsdkB\005IMSDKb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_IM_2eproto_deps[1] = {
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_IM_2eproto_sccs[21] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_IM_2eproto_sccs[23] = {
   &scc_info_ProtoIMAppConnectParam_IM_2eproto.base,
   &scc_info_ProtoIMAppDownloadFileInfo_IM_2eproto.base,
   &scc_info_ProtoIMAppPushInfo_IM_2eproto.base,
@@ -793,16 +854,18 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_IM_
   &scc_info_ProtoIMMessageImage_IM_2eproto.base,
   &scc_info_ProtoIMMessageText_IM_2eproto.base,
   &scc_info_ProtoIMOfflinePushInfo_IM_2eproto.base,
+  &scc_info_ProtoIMReturnResult_IM_2eproto.base,
+  &scc_info_ProtoIMReturnResult_ResultEntry_DoNotUse_IM_2eproto.base,
   &scc_info_ProtoIMSendMessage_IM_2eproto.base,
   &scc_info_ProtoIMSendMessageAsyncInfo_IM_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_IM_2eproto_once;
 static bool descriptor_table_IM_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_IM_2eproto = {
-  &descriptor_table_IM_2eproto_initialized, descriptor_table_protodef_IM_2eproto, "IM.proto", 3227,
-  &descriptor_table_IM_2eproto_once, descriptor_table_IM_2eproto_sccs, descriptor_table_IM_2eproto_deps, 21, 0,
+  &descriptor_table_IM_2eproto_initialized, descriptor_table_protodef_IM_2eproto, "IM.proto", 3380,
+  &descriptor_table_IM_2eproto_once, descriptor_table_IM_2eproto_sccs, descriptor_table_IM_2eproto_deps, 23, 0,
   schemas, file_default_instances, TableStruct_IM_2eproto::offsets,
-  file_level_metadata_IM_2eproto, 21, file_level_enum_descriptors_IM_2eproto, file_level_service_descriptors_IM_2eproto,
+  file_level_metadata_IM_2eproto, 23, file_level_enum_descriptors_IM_2eproto, file_level_service_descriptors_IM_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -7927,6 +7990,280 @@ void ProtoIMMessageImage::InternalSwap(ProtoIMMessageImage* other) {
 }
 
 
+// ===================================================================
+
+ProtoIMReturnResult_ResultEntry_DoNotUse::ProtoIMReturnResult_ResultEntry_DoNotUse() {}
+ProtoIMReturnResult_ResultEntry_DoNotUse::ProtoIMReturnResult_ResultEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void ProtoIMReturnResult_ResultEntry_DoNotUse::MergeFrom(const ProtoIMReturnResult_ResultEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata ProtoIMReturnResult_ResultEntry_DoNotUse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+void ProtoIMReturnResult_ResultEntry_DoNotUse::MergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
+  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
+void ProtoIMReturnResult::InitAsDefaultInstance() {
+}
+class ProtoIMReturnResult::_Internal {
+ public:
+};
+
+ProtoIMReturnResult::ProtoIMReturnResult()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:im.citylife.proto.ProtoIMReturnResult)
+}
+ProtoIMReturnResult::ProtoIMReturnResult(const ProtoIMReturnResult& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  result_.MergeFrom(from.result_);
+  code_ = from.code_;
+  // @@protoc_insertion_point(copy_constructor:im.citylife.proto.ProtoIMReturnResult)
+}
+
+void ProtoIMReturnResult::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_ProtoIMReturnResult_IM_2eproto.base);
+  code_ = PROTOBUF_LONGLONG(0);
+}
+
+ProtoIMReturnResult::~ProtoIMReturnResult() {
+  // @@protoc_insertion_point(destructor:im.citylife.proto.ProtoIMReturnResult)
+  SharedDtor();
+}
+
+void ProtoIMReturnResult::SharedDtor() {
+}
+
+void ProtoIMReturnResult::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ProtoIMReturnResult& ProtoIMReturnResult::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ProtoIMReturnResult_IM_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void ProtoIMReturnResult::Clear() {
+// @@protoc_insertion_point(message_clear_start:im.citylife.proto.ProtoIMReturnResult)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  result_.Clear();
+  code_ = PROTOBUF_LONGLONG(0);
+  _internal_metadata_.Clear();
+}
+
+const char* ProtoIMReturnResult::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int64 code = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // map<string, string> result = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&result_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ProtoIMReturnResult::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:im.citylife.proto.ProtoIMReturnResult)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 code = 1;
+  if (this->code() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_code(), target);
+  }
+
+  // map<string, string> result = 2;
+  if (!this->_internal_result().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "im.citylife.proto.ProtoIMReturnResult.ResultEntry.key");
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "im.citylife.proto.ProtoIMReturnResult.ResultEntry.value");
+      }
+    };
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_result().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_result().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_result().begin();
+          it != this->_internal_result().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = ProtoIMReturnResult_ResultEntry_DoNotUse::Funcs::InternalSerialize(2, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
+        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_result().begin();
+          it != this->_internal_result().end(); ++it) {
+        target = ProtoIMReturnResult_ResultEntry_DoNotUse::Funcs::InternalSerialize(2, it->first, it->second, target, stream);
+        Utf8Check::Check(&(*it));
+      }
+    }
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:im.citylife.proto.ProtoIMReturnResult)
+  return target;
+}
+
+size_t ProtoIMReturnResult::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:im.citylife.proto.ProtoIMReturnResult)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // map<string, string> result = 2;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_result_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+      it = this->_internal_result().begin();
+      it != this->_internal_result().end(); ++it) {
+    total_size += ProtoIMReturnResult_ResultEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // int64 code = 1;
+  if (this->code() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_code());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ProtoIMReturnResult::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:im.citylife.proto.ProtoIMReturnResult)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ProtoIMReturnResult* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ProtoIMReturnResult>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:im.citylife.proto.ProtoIMReturnResult)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:im.citylife.proto.ProtoIMReturnResult)
+    MergeFrom(*source);
+  }
+}
+
+void ProtoIMReturnResult::MergeFrom(const ProtoIMReturnResult& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:im.citylife.proto.ProtoIMReturnResult)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  result_.MergeFrom(from.result_);
+  if (from.code() != 0) {
+    _internal_set_code(from._internal_code());
+  }
+}
+
+void ProtoIMReturnResult::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:im.citylife.proto.ProtoIMReturnResult)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ProtoIMReturnResult::CopyFrom(const ProtoIMReturnResult& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:im.citylife.proto.ProtoIMReturnResult)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ProtoIMReturnResult::IsInitialized() const {
+  return true;
+}
+
+void ProtoIMReturnResult::InternalSwap(ProtoIMReturnResult* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  result_.Swap(&other->result_);
+  swap(code_, other->code_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ProtoIMReturnResult::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace proto
 }  // namespace citylife
@@ -7994,6 +8331,12 @@ template<> PROTOBUF_NOINLINE ::im::citylife::proto::ProtoIMImage* Arena::CreateM
 }
 template<> PROTOBUF_NOINLINE ::im::citylife::proto::ProtoIMMessageImage* Arena::CreateMaybeMessage< ::im::citylife::proto::ProtoIMMessageImage >(Arena* arena) {
   return Arena::CreateInternal< ::im::citylife::proto::ProtoIMMessageImage >(arena);
+}
+template<> PROTOBUF_NOINLINE ::im::citylife::proto::ProtoIMReturnResult_ResultEntry_DoNotUse* Arena::CreateMaybeMessage< ::im::citylife::proto::ProtoIMReturnResult_ResultEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateInternal< ::im::citylife::proto::ProtoIMReturnResult_ResultEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::im::citylife::proto::ProtoIMReturnResult* Arena::CreateMaybeMessage< ::im::citylife::proto::ProtoIMReturnResult >(Arena* arena) {
+  return Arena::CreateInternal< ::im::citylife::proto::ProtoIMReturnResult >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
