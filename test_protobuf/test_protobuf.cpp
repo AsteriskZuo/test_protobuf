@@ -32,11 +32,19 @@ static void test1() {
     
     ProtoIMMessageImage *image = new ProtoIMMessageImage();
     image->set_image_uuid("image_uuid");
+    ProtoIMImage* img = image->add_images();
+    img->set_image_uuid("img_uuid");
     msgex.set_allocated_image(image);
+    
+    if (msgex.has_conv()) {
+        std::cout << "ok" << std::endl;
+    }
     
     if (msgex.has_image()) {
         const ProtoIMMessageImage& out_image = msgex.image();
         std::cout << out_image.image_uuid().c_str() << std::endl;
+        const ProtoIMImage &out_img = out_image.images(0);
+        std::cout << out_img.image_uuid().c_str() << std::endl;
         msgex.clear_image();
     }
 }

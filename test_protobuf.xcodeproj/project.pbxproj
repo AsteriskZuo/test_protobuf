@@ -742,7 +742,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2HDFPA9KJF;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/protobuf/include\"";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/protobuf/include\"",
+					"\"$(SRCROOT)/test_protobuf/test_protobuf\"",
+				);
 				INFOPLIST_FILE = test_protobuf/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -767,7 +770,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2HDFPA9KJF;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/protobuf/include\"";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/protobuf/include\"",
+					"\"$(SRCROOT)/test_protobuf/test_protobuf\"",
+				);
 				INFOPLIST_FILE = test_protobuf/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
