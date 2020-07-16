@@ -11,13 +11,17 @@
 
 #include <iostream>
 #include <utility>
+#include <thread>
+#include <chrono>
 
 using namespace im::citylife::proto;
 
 static void test1();
 static void test2();
+static void test3();
+static void test4();
 void test_protobuf() {
-    test2();
+    test4();
 }
 static void test1() {
     ProtoIMMessageEx msgex;
@@ -92,4 +96,96 @@ static void test2() {
     
     
     
+}
+
+static void test3() {
+    ProtoIMReturnResult result;
+    auto size = result.ByteSizeLong();
+    char* data = (char*)std::malloc(size);
+    bool ret = result.SerializeToArray(data, size);
+    int a = ret;
+}
+
+class shared_object {
+public:
+    int _var;
+    static int _s_count;
+public:
+    void changed1(int tid, int var) {
+        static int local_var = var;
+        if (1 == tid) {
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+            ++local_var;
+            std::cout << __func__ << ":" << local_var << ":addr:" << &local_var << ":addr2:" << (int*)&var << std::endl;
+        }
+        if (2 == tid) {
+            std::this_thread::sleep_for(std::chrono::seconds(2));
+            local_var += 2;
+            std::cout << __func__ << ":" << local_var << ":addr:" << &local_var << ":addr2:" << (int*)&var << std::endl;
+        }
+    }
+    void changed3(int tid, int var) {
+//        _var = var;
+        if (1 == tid) {
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+            ++_var;
+            std::cout << __func__ << ":" << _var << ":addr:" << &_var << ":addr2:" << (int*)&var << std::endl;
+        }
+        if (2 == tid) {
+            std::this_thread::sleep_for(std::chrono::seconds(2));
+            _var += 2;
+            std::cout << __func__ << ":" << _var << ":addr:" << &_var << ":addr2:" << (int*)&var << std::endl;
+        }
+    }
+    void changed2(int tid, int var) {
+        int local_var = var;
+        if (1 == tid) {
+            std::this_thread::sleep_for(std::chrono::seconds(2));
+            ++local_var;
+            std::cout << __func__ << ":" << local_var << ":addr:" << &local_var << ":addr2:" << (int*)&var << std::endl;
+        }
+        if (2 == tid) {
+            std::this_thread::sleep_for(std::chrono::seconds(3));
+            local_var += 2;
+            std::cout << __func__ << ":" << local_var << ":addr:" << &local_var << ":addr2:" << (int*)&var << std::endl;
+        }
+        
+    }
+};
+int shared_object::_s_count = 0;
+/**
+ * 测试局部变量是否属于线程的地址空间
+ * 方法内的局部变量是在线程自己的空间，并不会相互影响！
+ */
+static void test4() {
+    if (true) {
+        //线程内的局部变量
+        shared_object obj;
+        obj._var = 9;
+        std::thread t1(&shared_object::changed2, &obj, 1, 8);
+        std::this_thread::sleep_for(std::chrono::microseconds(500));
+        std::thread t2(&shared_object::changed2, &obj, 2, 8);
+        t1.join();
+        t2.join();
+    }
+    if (true) {
+        //对象的成员变量
+        shared_object obj;
+        obj._var = 9;
+        std::thread t1(&shared_object::changed3, &obj, 1, 8);
+        std::this_thread::sleep_for(std::chrono::microseconds(500));
+        std::thread t2(&shared_object::changed3, &obj, 2, 8);
+        t1.join();
+        t2.join();
+    }
+    if (true) {
+        //方法内的静态变量
+        shared_object obj;
+        obj._var = 9;
+        std::thread t1(&shared_object::changed1, &obj, 1, 8);
+        std::this_thread::sleep_for(std::chrono::microseconds(500));
+        std::thread t2(&shared_object::changed1, &obj, 2, 8);
+        t1.join();
+        t2.join();
+    }
 }
