@@ -20,8 +20,9 @@ static void test1();
 static void test2();
 static void test3();
 static void test4();
+static void test5();
 void test_protobuf() {
-    test4();
+    test5();
 }
 static void test1() {
     ProtoIMMessageEx msgex;
@@ -188,4 +189,52 @@ static void test4() {
         t1.join();
         t2.join();
     }
+}
+
+class BaseClass {
+public:
+    BaseClass() {
+        std::cout << __func__ << ":" << __LINE__ << std::endl;
+    }
+    virtual ~BaseClass() {
+        std::cout << __func__ << ":" << __LINE__ << std::endl;
+    }
+};
+class DerivedClass : public BaseClass {
+public:
+    DerivedClass() {
+        std::cout << __func__ << ":" << __LINE__ << std::endl;
+    }
+    ~DerivedClass() {
+        std::cout << __func__ << ":" << __LINE__ << std::endl;
+    }
+};
+class BaseClass2 {
+public:
+    BaseClass2() {
+        std::cout << __func__ << ":" << __LINE__ << std::endl;
+    }
+    ~BaseClass2() {
+        std::cout << __func__ << ":" << __LINE__ << std::endl;
+    }
+};
+class DerivedClass2 : public BaseClass2 {
+public:
+    DerivedClass2() {
+        std::cout << __func__ << ":" << __LINE__ << std::endl;
+    }
+    ~DerivedClass2() {
+        std::cout << __func__ << ":" << __LINE__ << std::endl;
+    }
+};
+
+/**
+ * 虚析构的作用
+ * 虚析构是可以调用子类的析构函数的
+ */
+static void test5() {
+    BaseClass *sub_obj = new DerivedClass();
+    delete sub_obj;
+    BaseClass2 *sub_obj2 = new DerivedClass2();
+    delete sub_obj2;
 }
