@@ -238,3 +238,4 @@ static void test5() {
     BaseClass2 *sub_obj2 = new DerivedClass2();
     delete sub_obj2;
 }
+
